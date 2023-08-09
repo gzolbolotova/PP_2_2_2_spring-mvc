@@ -18,6 +18,11 @@ public class CarServiceImpl implements CarService{
 
     @Override
     public List<Car> getCars(List<Car> cars, int count) {
-        return carDao.getCars(cars, count);
+        return carDao.carsList().stream().limit(count).toList();
+    }
+
+    @Override
+    public List<Car> carsList() {
+        return carDao.carsList();
     }
 }

@@ -11,32 +11,13 @@ public class CarDaoImp implements CarDao{
 
 
     @Override
-    public List<Car> getCars(List<Car> cars, int count) {
-        List<Car> subCar;
-        if(count > 0){
-            switch (count){
-                case 1:
-                    subCar = cars.subList(0, 1);
-                    break;
-                case 2:
-                    subCar = cars.subList(0, 2);
-                    break;
-                case 3:
-                    subCar = cars.subList(0, 3);
-                    break;
-                case 4:
-                    subCar = cars.subList(0, 4);
-                    break;
-                case 5:
-                    subCar = cars.subList(0, 5);
-                    break;
-                default:
-                    return cars;
-            }
-            return subCar;
-        }else {
-            return null;
-        }
-
+    public List<Car> carsList() {
+        return List.of(
+                new Car(1, "BMW", 15826),
+                new Car(2, "Range Rover ", 25382),
+                new Car(3, "Volkswagen", 235625),
+                new Car(4, "Toyota", 22365),
+                new Car(5, "Chery Tiggo", 32145)
+        );
     }
 }
